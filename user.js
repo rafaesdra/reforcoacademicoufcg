@@ -45,7 +45,7 @@ async function loginUsuario(){
       document.getElementById("loginMsg").innerText="Usuário ou senha incorretos."; return;
     }
     usuarioAtivo = {id: nome, ...userSnap.data()};
-    await setDoc(doc(window.db, 'ativos', 'current'), {usuario: nome});
+    localStorage.setItem("usuarioAtivo", JSON.stringify(usuarioAtivo));
     mostrarDashboard();
   } catch(error) {
     console.error("Erro ao fazer login:", error);
