@@ -54,7 +54,8 @@ async function criarUsuario(){
       xp: 0,
       streak: 0,
       ultimaData: null,
-      progresso: {}
+      progresso: {},
+      questoesRespondidas: {}
     };
     await setDoc(doc(window.db, 'usuarios', user.uid), userData);
 
@@ -112,6 +113,8 @@ async function loginUsuario(){
     }
 
     usuarioAtivo = {id: user.uid, ...userSnap.data()};
+    usuarioAtivo.progresso = usuarioAtivo.progresso || {};
+    usuarioAtivo.questoesRespondidas = usuarioAtivo.questoesRespondidas || {};
     localStorage.setItem("usuarioAtivo", JSON.stringify(usuarioAtivo));
     mostrarDashboard();
   } catch(error) {
@@ -230,6 +233,8 @@ function mostrarMeta(){ document.getElementById("metaAtual").innerText = ""; }
 function definirUsuarioAtivo(usuario) {
   usuarioAtivo = usuario;
   if (usuarioAtivo) {
+    usuarioAtivo.progresso = usuarioAtivo.progresso || {};
+    usuarioAtivo.questoesRespondidas = usuarioAtivo.questoesRespondidas || {};
     localStorage.setItem("usuarioAtivo", JSON.stringify(usuarioAtivo));
   } else {
     localStorage.removeItem("usuarioAtivo");
