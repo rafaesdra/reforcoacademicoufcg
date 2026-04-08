@@ -1,0 +1,14 @@
+{
+  "disciplina": "Álgebra Vetorial",
+  "assuntos": [
+    {"titulo": "Vetores", "path": "01_vetores.json"},
+    {"titulo": "Produto Escalar", "path": "02_produto_escalar.json"},
+    {"titulo": "Produto Vetorial", "path": "03_produto_vetorial.json"},
+    {"titulo": "Produto Misto", "path": "04_produto_vetorial.json"},
+    {"titulo": "Retas", "path": "05_retas.json"},
+    {"titulo": "Planos", "path": "06_planos.json"},
+    {"titulo": "Distâncias", "path": "07_distancias.json"},
+    {"titulo": "Cônicas", "path": "08_conicas.json"},
+    {"titulo": "Superfícies Quadráticas", "path": "09_superficies_quadraticas.json"}
+  ]
+}
